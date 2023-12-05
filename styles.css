@@ -1,0 +1,64 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    background-color: rgb(249, 255, 250);
+}
+h1, h2 {
+    padding: 10px;
+}
+.navbar {
+    background-color: rgb(2, 39, 5);
+    padding: 20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left;
+}
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+a:hover {
+    background-color: rgb(61, 168, 40);
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.menu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.menu:hover .menu-content {
+    display: block;
+}
+.info {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+}
+.infoText {
+    background-color: rgb(47, 114, 34);
+    border-radius: 10px;
+    margin: 10px;
+    color: #fff;
+}
+.infoText:hover {
+    background-color: rgb(2, 39, 5);
+}
