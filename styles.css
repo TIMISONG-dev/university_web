@@ -1,14 +1,23 @@
 body {
     font-family: 'Rubik', sans-serif;
     margin: 0;
-    background-color: rgb(249, 255, 250);
+    background-color: rgb(241, 248, 255);
 }
 h1, h2 {
     padding: 10px;
 }
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 20px;
+}
 .navbar {
-    background-color: rgb(2, 39, 5);
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
 }
 ul {
     list-style-type: none;
@@ -21,13 +30,13 @@ li {
 }
 a {
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 a:hover {
-    background-color: rgb(61, 168, 40);
+    background-color: rgb(185, 213, 255);
 }
 .menu-content {
     display: none;
@@ -46,19 +55,68 @@ a:hover {
 .menu:hover .menu-content {
     display: block;
 }
-.info {
+.box {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     margin: 20px;
+    padding: 20px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
-.infoText {
-    background-color: rgb(47, 114, 34);
+.it {
+    background-color: rgb(51, 105, 175);
     border-radius: 10px;
     margin: 10px;
     color: #fff;
 }
-.infoText:hover {
-    background-color: rgb(2, 39, 5);
+.logo {
+    width: 120px;
+    height: 120px;
+}
+.button {
+    position: relative;
+    width: 100px;
+    background-color: black;
+    border-radius: 4em;
+    font-size: 16px;
+    color: white;
+    padding: 0.8em 1.8em;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+}
+.button:hover {
+    transition-duration: 0.1s;
+    background-color: #3A3A3A;
+}
+.button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+}
+.button:active:after {
+    box-shadow: 0 0 0 0 rgb(17, 104, 218);
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+.button:active {
+    top: 1px;
 }
