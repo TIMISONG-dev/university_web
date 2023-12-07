@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('scroll', function() {
       const scrollPosition = window.scrollY;
   
-      if (scrollPosition > 100) {
+      if (scrollPosition > 200) {
         row1.style.opacity = 0;
         row2.style.opacity = 1;
       } else {

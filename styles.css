@@ -21,7 +21,7 @@ h3 {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
 }
 ul {
@@ -50,16 +50,17 @@ a:hover {
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    flex-direction: column;
 }
 .menu-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
     text-align: left;
 }
 .menu:hover .menu-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 .box {
     display: flex;
@@ -90,7 +91,6 @@ a:hover {
     width: 100px;
     height: 100px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: left;
 }
@@ -153,7 +153,6 @@ a:hover {
     flex-direction: row;
     background: rgb(189, 254, 0);
     color: #000000;
-    text-align: center;
     align-items: center;
     justify-content: center;
     margin: 20px;
@@ -166,12 +165,14 @@ a:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    fill            : none;
+    stroke          : black;
+    stroke-width    : .5px;
+    stroke-linejoin : round;
+    animation       : 2s pulsate infinite;
 }
-.name1{
-    color: #fff;
-    display:flex;
-    text-align: right;
-    padding-bottom:0px;
+@keyframes pulsate {
+    50%{ stroke-width:5px }
 }
 .telegram {
     width: 40px;
@@ -184,7 +185,7 @@ a:hover {
 .row {
     display: flex;
     flex-direction: row;
-    transition: opacity 0.5s ease;
+    transition: opacity 1.0s ease;
 }
 #row1 {
     opacity: 1;
