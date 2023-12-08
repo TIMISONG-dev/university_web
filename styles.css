@@ -71,6 +71,7 @@ h3 {
 }
 
 .navbar {
+    background-color: #0000007c;
     z-index: 1;
     position: fixed;
     top: auto;
@@ -192,7 +193,7 @@ li {
     box-shadow: 0 0 10px 40px white;
 }
 .button:active:after {
-    box-shadow: 0 0 0 0 rgb(67, 218, 17);
+    box-shadow: 0 0 0 0 rgb(189, 254, 0);
     position: absolute;
     border-radius: 4em;
     left: 0;
@@ -230,12 +231,22 @@ li {
     justify-content: center;
 }
 .telegram {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 .vk {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+}
+.phone {
+    padding: 14px 0px;
+    width: 25px;
+    height: 25px;
+}
+.map {
+    padding: 14px 0px 14px 14px;
+    width: 18px;
+    height: 25px;
 }
 .row {
     display: flex;
@@ -254,5 +265,9 @@ li {
     margin-top: 250px;
 }
 .icon {
-    padding: 14px 16px;
+    padding: 14px 14px;
+    transition: 1s;
+}
+.icon:hover {
+    transform:scale(1.1);
 }
