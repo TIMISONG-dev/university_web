@@ -162,6 +162,8 @@ li {
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-rendering: optimizeLegibility;
+    animation: colorful 10s linear infinite;
 }
 .box {
     display: flex;
