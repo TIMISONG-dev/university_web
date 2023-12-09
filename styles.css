@@ -162,8 +162,6 @@ li {
     text-align: center;
     align-items: center;
     justify-content: center;
-    text-rendering: optimizeLegibility;
-    animation: colorful 10s linear infinite;
 }
 .box {
     display: flex;
@@ -306,7 +304,7 @@ li {
 }
 .banner {
     margin-top: 100px;
-    height: 931px;
+    height: 930px;
     width: auto;
     transition: 1s;
 }
@@ -331,6 +329,6 @@ li {
     padding: 20px 30px 60px 30px;
     position: absolute;
 }
-.box_img:hover{
+.box_img:hover {
     transform:scale(1.1);
 }
