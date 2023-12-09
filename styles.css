@@ -65,11 +65,9 @@ h3 {
       transparent var(--offset)
     );
 }
-
 .bien-glass .bien-glass-edge {
     pointer-events: none;
 }
-
 .navbar {
     background-color: #0000007c;
     z-index: 1;
@@ -88,6 +86,17 @@ h3 {
     filter: blur(0);
     pointer-events: auto;
     z-index: 3;
+}
+.logo {
+    padding: 0px 0px 0px 100px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.navLists {
+    padding: 0px 100px 0px 0px;
 }
 ul {
     list-style-type: none;
@@ -109,13 +118,30 @@ li {
     background-color: rgb(189, 254, 0);
     color:black;
 }
+.abovelist {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+.abovelist:hover {
+    background-color: rgb(189, 254, 0);
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color:black;
+}
 .menu-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
+    width: 200px;
 }
 .menu-content a {
     color: black;
@@ -127,20 +153,32 @@ li {
     display: flex;
     flex-direction: column;
 }
+.main {
+    margin-top: 250px;
+}
+.name {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 .box {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(17, 17, 17);
+    color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
     border-radius: 10px;
     margin: 20px;
-    padding: 20px;
     text-align: center;
     align-items: center;
     justify-content: center;
     width: 400px;
     height: 400px;
     transition:1s;
+    padding: 20px 30px 60px 30px;
 }
 .box:hover{
     transform:scale(1.1);
@@ -151,13 +189,6 @@ li {
     margin: 10px;
     padding: 10px;
     color: #000000;
-}
-.logo {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
 }
 .button {
     position: relative;
@@ -204,49 +235,51 @@ li {
 .button:active {
     top: 1px;
 }
-.kalivan{
-    width:50px;
-    height:50px;
+.kalivan {
+    width: 25px;
+    height: 25px;
+    opacity: 0.02;
+    padding: 10px;
+    transition: 1s;
+}
+.kalivan:hover {
+    opacity: 1;
+    transform: scale(3.0);
 }
 .date {
     border-radius: 10px;
     width: 150px;
     background: rgb(189, 254, 0);
+    color: #000000;
 }
 .info {
     display: flex;
     flex-direction: row;
-    background: rgb(189, 254, 0);
-    color: #000000;
+    background: rgb(24, 24, 24);
+    color: #ffffff;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 20px;
     border-radius: 10px;
-}
-.name {
-    color: #fff;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 }
 .telegram {
     width: 30px;
     height: 30px;
 }
 .vk {
-    width: 35px;
-    height: 35px;
+    padding-right: 100px;
+    width: 30px;
+    height: 30px;
 }
 .phone {
-    padding: 14px 0px;
-    width: 25px;
-    height: 25px;
+    padding-left: 100px;
+    width: 30px;
+    height: 30px;
 }
 .map {
     padding: 14px 0px 14px 14px;
-    width: 18px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 .row {
     display: flex;
@@ -260,9 +293,6 @@ li {
 }
 #row2 {
     opacity: 0;
-}
-.main {
-    margin-top: 250px;
 }
 .icon {
     padding: 14px 14px;
