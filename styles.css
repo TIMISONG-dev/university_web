@@ -1,0 +1,334 @@
+body {
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    flex-direction: column;
+    background-color: rgb(17, 17, 17);
+}
+h1, h2, h3 {
+    padding: 10px;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 38px;
+}
+h3 {
+    font-size: 20px;
+}
+.bien-glass {
+    position: absolute;
+    inset: 0;
+    /*   Extend the backdrop to the bottom for it to "collect the light" outside of the nav */
+    --extended-by: 100px;
+    bottom: calc(-1 * var(--extended-by));
+  
+    --filter: blur(30px);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    pointer-events: none;
+  
+    /*   Cut the part of the backdrop that falls outside of <nav /> */
+    --cutoff: calc(100% - var(--extended-by));
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0,
+      black var(--cutoff),
+      transparent var(--cutoff)
+    );
+}
+.bien-glass-edge {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+  
+    --extended-by: 80px;
+    --offset: 20px;
+    --thickness: 2px;
+    height: calc(var(--extended-by) + var(--offset));
+    /*   Offset is used to snuck the border backdrop slightly under the main backdrop for  smoother effect */
+    top: calc(100% - var(--offset) + var(--thickness));
+  
+    /*   Make the blur bigger so that the light bleed effect spreads wider than blur on the first backdrop */
+    /*   Increase saturation and brightness to fake smooth chamfered edge reflections */
+    --filter: blur(90px) saturate(160%) brightness(1.3);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    pointer-events: none;
+  
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0,
+      black var(--offset),
+      transparent var(--offset)
+    );
+}
+.bien-glass .bien-glass-edge {
+    pointer-events: none;
+}
+.navbar {
+    background-color: #0000007c;
+    z-index: 1;
+    position: fixed;
+    top: auto;
+    padding: 20px;
+    left: 0;
+    right: 0;
+}
+.navElements {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    filter: blur(0);
+    pointer-events: auto;
+    z-index: 3;
+}
+.logo {
+    padding: 0px 0px 0px 100px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.navLists {
+    padding: 0px 100px 0px 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left;
+}
+.list {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+.list:hover {
+    background-color: rgb(189, 254, 0);
+    color:black;
+}
+.abovelist {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+.abovelist:hover {
+    background-color: rgb(189, 254, 0);
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color:black;
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    flex-direction: column;
+    width: 200px;
+}
+.menu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+}
+.menu:hover .menu-content {
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    margin-top: 250px;
+}
+.name {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    transition:1s;
+    padding: 20px 30px 60px 30px;
+}
+.box:hover{
+    transform:scale(1.1);
+}
+.about {
+    background-color: rgb(189, 254, 0);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: #000000;
+}
+.button {
+    position: relative;
+    width: 100px;
+    background: rgb(189, 254, 0);
+    border-radius: 4em;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    padding: 0.8em 1.8em;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+}
+.button:hover {
+    transition-duration: 0.1s;
+    background-color: rgb(146, 195, 0);
+}
+.button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+}
+.button:active:after {
+    box-shadow: 0 0 0 0 rgb(189, 254, 0);
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+.button:active {
+    top: 1px;
+}
+.kalivan {
+    width: 25px;
+    height: 25px;
+    opacity: 0.02;
+    padding: 10px;
+    transition: 1s;
+}
+.kalivan:hover {
+    opacity: 1;
+    transform: scale(3.0);
+}
+.date {
+    border-radius: 10px;
+    width: 150px;
+    background: rgb(189, 254, 0);
+    color: #000000;
+    text-decoration: none;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    background: rgb(24, 24, 24);
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 10px;
+}
+.telegram {
+    width: 30px;
+    height: 30px;
+}
+.vk {
+    padding-right: 100px;
+    width: 30px;
+    height: 30px;
+}
+.phone {
+    padding-left: 100px;
+    width: 30px;
+    height: 30px;
+}
+.map {
+    padding: 14px 0px 14px 14px;
+    width: 30px;
+    height: 30px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.0s ease;
+}
+#row1 {
+    opacity: 1;
+}
+#row2 {
+    opacity: 0;
+}
+.icon {
+    padding: 14px 14px;
+    transition: 1s;
+}
+.icon:hover {
+    transform:scale(1.1);
+}
+.banner {
+    margin-top: 100px;
+    height: 930px;
+    width: auto;
+    transition: 1s;
+}
+#banner {
+    opacity: 0;
+}
+.box_img {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    transition:1s;
+    padding: 20px 30px 60px 30px;
+    position: absolute;
+}
+.box_img:hover {
+    transform:scale(1.1);
+}
