@@ -2,5 +2,5 @@
 
 #Установка проекта
 ```sh 
-git clone https://github.com/Eg0r0k/IIT.git
+git clone https://github.com/TIMISONG-dev/university_web.git
 ```
